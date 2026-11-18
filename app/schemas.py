@@ -48,3 +48,16 @@ class ProductResponse(BaseModel):
     category_id: Optional[int] = None
 
     model_config = ConfigDict(from_attributes=True)
+# Shopping Cart schemas
+class CartItemCreate(BaseModel):
+    product_id: int
+    quantity: int = 1
+
+
+class CartItemResponse(BaseModel):
+    id: int
+    user_id: int
+    product_id: int
+    quantity: int
+
+    model_config = ConfigDict(from_attributes=True)
