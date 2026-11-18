@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routes import users, products
+from app.routes import users, products, categories
 
 app = FastAPI(
     title="E-Commerce REST API",
@@ -10,6 +10,7 @@ app = FastAPI(
 
 app.include_router(users.router)
 app.include_router(products.router)
+app.include_router(categories.router)
 
 
 @app.get("/")
